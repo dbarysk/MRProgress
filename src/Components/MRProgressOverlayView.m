@@ -799,16 +799,6 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 - (void)applyProgressAnimated:(BOOL)animated {
     if ([self.modeView respondsToSelector:@selector(setProgress:animated:)]) {
         [((id)self.modeView) setProgress:self.progress animated:animated];
-    } else if ([self.modeView respondsToSelector:@selector(setProgress:)]) {
-        if (animated) {
-            #if DEBUG
-                NSLog(@"** WARNING - %@: %@ is only valid to call when receiver is in a determinate mode or custom view supports %@!",
-                      NSStringFromClass(self.class),
-                      NSStringFromSelector(_cmd),
-                      NSStringFromSelector(@selector(setProgress:animated:)));
-            #endif
-        }
-        [((id)self.modeView) setProgress:self.progress];
     } else {
         NSAssert(self.mode == MRProgressOverlayViewModeDeterminateCircular
                  || self.mode == MRProgressOverlayViewModeDeterminateHorizontalBar,
