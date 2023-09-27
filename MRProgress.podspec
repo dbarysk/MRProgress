@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'MRProgress'
-  s.version               = '0.8.3'
+  s.version               = '0.7.2'
   s.summary               = 'Collection of iOS drop-in components to visualize progress by a HUD with different modes'
   s.homepage              = 'https://github.com/mrackwitz/MRProgress'
   s.social_media_url      = 'https://twitter.com/mrackwitz'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license               = 'MIT License'
   s.source                = { :git => 'https://github.com/mrackwitz/MRProgress.git', :tag => s.version.to_s }
   s.source_files          = 'src/MRProgress.h'
-  s.platform              = :ios, '7.0'
+  s.platform              = :ios, '11.0'
   s.requires_arc          = true
   s.default_subspecs      = %w{Blur ActivityIndicator Circular Icons NavigationBarProgress Overlay}
   
